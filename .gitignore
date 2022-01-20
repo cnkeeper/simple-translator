@@ -1,0 +1,15 @@
+*.war
+*.ear
+*.iml
+*.class
+.idea/
+.svn/
+target/
+grunt/node_modules
+.project
+.settings
+.classpath
+.factorypath
+kmsuser.txt
+doas-for-mac
+*/logs
