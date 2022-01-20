@@ -9,15 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.cnkeep</groupId>
-    <artifactId>common-translation-spi</artifactId>
-    <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.20</version>
-        </dependency>
-    </dependencies>
+    <artifactId>simple-translator-application</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>common-translation-application</artifactId>
+    <artifactId>simple-translator-core</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

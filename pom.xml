@@ -9,9 +9,9 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>common-translation-spi</module>
-        <module>common-translation-core</module>
-        <module>common-translation-application</module>
+        <module>simple-translator-spi</module>
+        <module>simple-translator-core</module>
+        <module>simple-translator-application</module>
     </modules>
 
     <properties>
