@@ -2,7 +2,6 @@
 package com.github.cnkeep.translation.spi.core;
 
 import com.github.cnkeep.translation.spi.LangEnum;
-import com.github.cnkeep.translation.spi.core.DataSourceType;
 import java.util.List;
 import lombok.Getter;
 

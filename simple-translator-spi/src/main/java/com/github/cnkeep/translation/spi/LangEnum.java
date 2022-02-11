@@ -1,6 +1,7 @@
 
 package com.github.cnkeep.translation.spi;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -34,11 +35,9 @@ public enum LangEnum {
     }
 
     public static LangEnum lookup(String code, LangEnum defaultV) {
-        for (LangEnum langEnum : LangEnum.values()) {
-            if(Objects.equals(code,langEnum.code)){
-                return langEnum;
-            }
-        }
-        return defaultV;
+        return Arrays.stream(LangEnum.values())
+            .filter(langEnum -> Objects.equals(code, langEnum.code))
+            .findFirst()
+            .orElse(defaultV);
     }
 }
