@@ -16,7 +16,8 @@ import java.util.Locale;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * @author tanshichang<tanshichang @ bytedance.com>
+ * JackSon 序列化工具
+ * @author LeiLi.Zhang <mailto:zhangleili@bytedance.com>
  * @date 12/21/2021 5:53 PM
  */
 public class JacksonUtil {

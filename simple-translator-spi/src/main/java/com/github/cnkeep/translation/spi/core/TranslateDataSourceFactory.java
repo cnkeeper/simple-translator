@@ -3,12 +3,12 @@ package com.github.cnkeep.translation.spi.core;
 
 
 /**
- * TranslateDataSourceContainer
+ * TranslateDataSourceFactory
  *
  * @author LeiLi.Zhang <mailto:zhangleili@bytedance.com>
  * @date 2021/12/30
  */
-public interface TranslateDataSourceContainer {
+public interface TranslateDataSourceFactory {
     /**
      * 注册翻译数据源
      * @param dataSource

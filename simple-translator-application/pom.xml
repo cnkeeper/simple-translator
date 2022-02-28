@@ -16,4 +16,12 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.github.cnkeep</groupId>
+            <artifactId>simple-translator-spi</artifactId>
+            <version>${revison}</version>
+        </dependency>
+    </dependencies>
+
 </project>

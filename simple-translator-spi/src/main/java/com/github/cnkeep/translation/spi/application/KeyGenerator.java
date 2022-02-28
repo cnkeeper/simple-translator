@@ -1,6 +1,8 @@
 
 package com.github.cnkeep.translation.spi.application;
 
+import com.github.cnkeep.translation.spi.application.annotation.TranslateKey;
+
 /**
  * KeyGenerator
  *
@@ -10,9 +12,12 @@ package com.github.cnkeep.translation.spi.application;
 public interface KeyGenerator {
     /**
      * 生成key
-     * @param originKey 原始key
+     *
+     * @param originKey   原始key
      * @param targetClass 原始key对应的class
      * @return
      */
     String generate(String originKey, Class targetClass);
+
+    TranslateKey.TranslateKeyStrategy strategy();
 }
