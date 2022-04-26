@@ -10,7 +10,7 @@
 package com.github.cnkeep.translation.appliation.key;
 
 import com.github.cnkeep.translation.spi.application.annotation.TranslateKey;
-import com.github.cnkeep.translation.spi.application.KeyGenerator;
+import com.github.cnkeep.translation.spi.application.key.KeyGenerator;
 
 /**
  * AppendPrefixKeyGenerator

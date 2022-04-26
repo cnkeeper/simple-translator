@@ -22,7 +22,7 @@ public @interface TranslateField {
      *
      * @return
      */
-    TranslateType type();
+    Class<TranslateType> translateTypeClass();
 
     /**
      * 主键字段 不能为空, 指定当前对象的某个字段名作为翻译key
@@ -35,8 +35,4 @@ public @interface TranslateField {
      * 取翻译结果对应的属性值作为翻译结果
      */
     String metaField();
-
-    enum TranslateType{
-        ENUM;
-    }
 }

@@ -1,5 +1,5 @@
 
-package com.github.cnkeep.translation.spi.application;
+package com.github.cnkeep.translation.spi.application.key;
 
 import com.github.cnkeep.translation.spi.application.annotation.TranslateKey;
 
