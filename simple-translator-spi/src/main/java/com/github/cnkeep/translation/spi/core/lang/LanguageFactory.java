@@ -7,17 +7,16 @@
  * ****************************************************
  */
 
-package com.github.cnkeep.translation.spi.application.key;
+package com.github.cnkeep.translation.spi.core.lang;
 
-import com.github.cnkeep.translation.spi.application.annotation.TranslateKey;
-import java.util.Optional;
+import com.github.cnkeep.translation.spi.base.AbstractFactory;
 
 /**
- * KeyGeneratorFactory
+ * LanguageFactory
  *
  * @author LeiLi.Zhang <mailto:zhangleili@bytedance.com>
- * @date 2022/2/17
+ * @date 2022/10/11
  */
-public interface KeyGeneratorFactory {
-    Optional<KeyGenerator> lookup(TranslateKey.TranslateKeyStrategy strategy);
+public interface LanguageFactory extends AbstractFactory<String, Language> {
+
 }

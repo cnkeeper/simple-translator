@@ -17,16 +17,17 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * JackSon 序列化工具
+ *
  * @author LeiLi.Zhang <mailto:zhangleili@bytedance.com>
  * @date 12/21/2021 5:53 PM
  */
-public class JacksonUtil {
+public final class JacksonUtil {
 
     private JacksonUtil() {
     }
 
     private static ObjectMapper getMapper() {
-        return SingletonHolder.mapper;
+        return SingletonHolder.OBJECT_MAPPER;
     }
 
     /**
@@ -72,9 +73,13 @@ public class JacksonUtil {
      * @return 转换后的结果
      * @throws IOException 转换失败的时候抛出
      */
-    public static <T> T parseToObject(String jsonString, Class<T> valueType) throws IOException {
+    public static <T> T parseToObject(String jsonString, Class<T> valueType) {
         if (StringUtils.isNoneBlank(jsonString)) {
-            return getMapper().readValue(jsonString, valueType);
+            try {
+                return getMapper().readValue(jsonString, valueType);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
         return null;
     }
@@ -88,8 +93,12 @@ public class JacksonUtil {
      * @return 转换后的结果
      * @throws IOException 转换失败的时候抛出
      */
-    public static <T> T parseToObject(String jsonString, TypeReference<T> typeReference) throws IOException {
-        return getMapper().readValue(jsonString, typeReference);
+    public static <T> T parseToObject(String jsonString, TypeReference<T> typeReference) {
+        try {
+            return getMapper().readValue(jsonString, typeReference);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
@@ -98,14 +107,14 @@ public class JacksonUtil {
      */
     private static class SingletonHolder {
 
-        private static final ObjectMapper mapper;
+        private static final ObjectMapper OBJECT_MAPPER;
 
         static {
-            mapper = new ObjectMapper();
+            OBJECT_MAPPER = new ObjectMapper();
             // 设置日期对象的输出格式
-            mapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.CHINESE));
+            OBJECT_MAPPER.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.CHINESE));
             // 设置输入时忽略在JSON字符串中存在但Java对象实际没有的属性
-            mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+            OBJECT_MAPPER.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
             SimpleModule simpleModule = new SimpleModule();
             simpleModule.addSerializer(Long.class, ToStringSerializer.instance);
             simpleModule.addSerializer(Long.TYPE, ToStringSerializer.instance);
@@ -118,7 +127,7 @@ public class JacksonUtil {
                     jsonGenerator.writeEndObject();
                 }
             });
-            mapper.registerModule(simpleModule);
+            OBJECT_MAPPER.registerModule(simpleModule);
         }
     }
 

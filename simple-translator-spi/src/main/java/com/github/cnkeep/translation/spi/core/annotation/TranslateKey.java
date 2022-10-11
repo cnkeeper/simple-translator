@@ -1,5 +1,6 @@
-package com.github.cnkeep.translation.spi.application.annotation;
+package com.github.cnkeep.translation.spi.core.annotation;
 
+import com.github.cnkeep.translation.spi.core.key.support.AppendClassNamePrefixKeyGenerator;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -24,12 +25,10 @@ public @interface TranslateKey {
      */
     Class targetClass() default Void.class;
 
-    TranslateKeyStrategy strategy() default TranslateKeyStrategy.APPEND_PREFIX;
-
-    enum TranslateKeyStrategy {
-        /**
-         * 增加前缀
-         */
-        APPEND_PREFIX;
-    }
+    /**
+     * 指定生成key的策略名称, 默认为增加targetClass的类名前缀
+     *
+     * @return
+     */
+    String strategy() default AppendClassNamePrefixKeyGenerator.KEY_GENERATOR_STRATEGY;
 }

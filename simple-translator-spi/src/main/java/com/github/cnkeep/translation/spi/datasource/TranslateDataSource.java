@@ -1,7 +1,7 @@
 
-package com.github.cnkeep.translation.spi.core;
+package com.github.cnkeep.translation.spi.datasource;
 
-import com.github.cnkeep.translation.spi.LangEnum;
+import com.github.cnkeep.translation.spi.core.lang.Language;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -17,32 +17,33 @@ public interface TranslateDataSource {
      * 获取单个翻译文案
      *
      * @param key
-     * @param lang
+     * @param language
      * @return
      */
-    Optional<String> getText(String key, LangEnum lang);
+    Optional<String> getText(String key, Language language);
 
     /**
      * 批量获取翻译文案
      *
      * @param keyList
-     * @param lang
+     * @param language
      * @return
      */
-    Map<String, String> getTexts(List<String> keyList, LangEnum lang);
+    Map<String, String> getTexts(List<String> keyList, Language language);
 
     /**
      * 数据源类型
      *
      * @return
      */
-    DataSourceType type();
+    String type();
 
     /**
      * 优先级，数值越小优先级越高，高优先级会覆盖低优先级
+     *
      * @return
      */
-    default int order(){
+    default int order() {
         return Integer.MAX_VALUE;
     }
 

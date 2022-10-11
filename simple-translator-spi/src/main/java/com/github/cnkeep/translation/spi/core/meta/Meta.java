@@ -3,7 +3,7 @@
  * Rights Reserved This file is part of bytedance EA project. Unauthorized copy of this file, via
  * any medium is strictly prohibited. Proprietary and Confidential. ****************************************************
  **/
-package com.github.cnkeep.translation.spi.application.meta;
+package com.github.cnkeep.translation.spi.core.meta;
 
 /**
  * 翻译数据元

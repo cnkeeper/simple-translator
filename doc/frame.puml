@@ -8,27 +8,21 @@ note right of [数据集国际化]
  -
 end note
 
-package "应用层" {
-[异常翻译]
+package "核心层" {
 [注解方式翻译]
-[枚举翻译]
 [翻译api]
 }
-[数据集国际化] -down->[枚举翻译]
-[异常国际化] -down->[异常翻译]
 [VO国际化]-down->[注解方式翻译]
-[异常翻译]-down->[翻译api]
-[枚举翻译]-down->[翻译api]
 [注解方式翻译]-down->[翻译api]
 
-package "核心层" {
+package "数据层" {
   [翻译api实现]
   [数据源容器]
   [数据监控]
 }
 [翻译api] -down->[翻译api实现]
 [翻译api实现]-down->[数据源容器]
-package "数据层" {
+package "数据层扩展" {
   [数据源1]
   [数据源2]
   [数据源3]

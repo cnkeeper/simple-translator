@@ -1,4 +1,4 @@
-package com.github.cnkeep.translation.spi.application.annotation;
+package com.github.cnkeep.translation.spi.core.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

@@ -33,7 +33,7 @@ public class JsonStringDeserializer extends StdScalarDeserializer<Object> {
     }
 
     @Override
-    public Object deserialize(JsonParser jp, DeserializationContext ctxt) {
+    public Object deserialize(JsonParser jp, DeserializationContext context) {
         String value = null;
         try {
             value = jp.getText();
@@ -60,7 +60,7 @@ public class JsonStringDeserializer extends StdScalarDeserializer<Object> {
     }
 
     @Override
-    public Object getEmptyValue(DeserializationContext ctxt) throws JsonMappingException {
+    public Object getEmptyValue(DeserializationContext context) throws JsonMappingException {
         return null;
     }
 }

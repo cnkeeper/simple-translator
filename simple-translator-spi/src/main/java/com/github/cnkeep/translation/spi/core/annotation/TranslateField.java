@@ -1,4 +1,4 @@
-package com.github.cnkeep.translation.spi.application.annotation;
+package com.github.cnkeep.translation.spi.core.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -22,17 +22,12 @@ public @interface TranslateField {
      *
      * @return
      */
-    Class<TranslateType> translateTypeClass();
+    Class metaType();
 
     /**
      * 主键字段 不能为空, 指定当前对象的某个字段名作为翻译key
      *
      * @return
      */
-    String primary();
-
-    /**
-     * 取翻译结果对应的属性值作为翻译结果
-     */
-    String metaField();
+    String key();
 }

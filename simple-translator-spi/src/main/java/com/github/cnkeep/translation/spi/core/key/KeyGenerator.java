@@ -1,14 +1,15 @@
 
-package com.github.cnkeep.translation.spi.application.key;
+package com.github.cnkeep.translation.spi.core.key;
 
-import com.github.cnkeep.translation.spi.application.annotation.TranslateKey;
+import net.jcip.annotations.ThreadSafe;
 
 /**
- * KeyGenerator
+ * KeyGenerator： 生成翻译Key的生成器，需保证线程安全
  *
  * @author LeiLi.Zhang <mailto:zhangleili@bytedance.com>
  * @date 2021/12/30
  */
+@ThreadSafe
 public interface KeyGenerator {
     /**
      * 生成key
@@ -19,5 +20,9 @@ public interface KeyGenerator {
      */
     String generate(String originKey, Class targetClass);
 
-    TranslateKey.TranslateKeyStrategy strategy();
+    /**
+     * 策略标示
+     * @return
+     */
+    String strategy();
 }

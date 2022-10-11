@@ -4,10 +4,9 @@
  * any medium is strictly prohibited. Proprietary and Confidential. ****************************************************
  **/
 
-package com.github.cnkeep.translation.spi.application.meta;
+package com.github.cnkeep.translation.spi.core.meta;
 
-import com.github.cnkeep.translation.spi.LangEnum;
-import com.github.cnkeep.translation.spi.application.annotation.TranslateType;
+import com.github.cnkeep.translation.spi.core.lang.Language;
 import java.util.List;
 
 /**
@@ -20,16 +19,16 @@ public interface MetaFactory {
     /**
      * 获取翻译后的数据元
      *
-     * @param ids
-     * @param lang
+     * @param keys
+     * @param language
      * @return
      */
-    List<Meta> getTranslatedMeta(List<String> ids, LangEnum lang);
+    List<Meta> getMeta(List<String> keys, Language language);
 
     /**
      * 支持的翻译类型
      *
      * @return
      */
-    List<Class<TranslateType>> supportTypes();
+    List<Class> supportTypes();
 }

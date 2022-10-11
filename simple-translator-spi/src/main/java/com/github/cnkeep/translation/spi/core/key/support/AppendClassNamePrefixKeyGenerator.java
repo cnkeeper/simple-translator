@@ -7,25 +7,26 @@
  * ****************************************************
  */
 
-package com.github.cnkeep.translation.appliation.key;
+package com.github.cnkeep.translation.spi.core.key.support;
 
-import com.github.cnkeep.translation.spi.application.annotation.TranslateKey;
-import com.github.cnkeep.translation.spi.application.key.KeyGenerator;
+import com.github.cnkeep.translation.spi.core.key.KeyGenerator;
 
 /**
- * AppendPrefixKeyGenerator
+ * AppendClassNamePrefixKeyGenerator: 追加classname前缀的方式生成key
  *
  * @author LeiLi.Zhang <mailto:zhangleili@bytedance.com>
  * @date 2022/2/14
  */
-public class AppendPrefixKeyGenerator implements KeyGenerator {
+public class AppendClassNamePrefixKeyGenerator implements KeyGenerator {
+    public static final String KEY_GENERATOR_STRATEGY = "AppendClassNamePrefix";
+
     @Override
     public String generate(String originKey, Class targetClass) {
         return targetClass.getSimpleName() + "." + originKey;
     }
 
     @Override
-    public TranslateKey.TranslateKeyStrategy strategy() {
-        return TranslateKey.TranslateKeyStrategy.APPEND_PREFIX;
+    public String strategy() {
+        return KEY_GENERATOR_STRATEGY;
     }
 }
